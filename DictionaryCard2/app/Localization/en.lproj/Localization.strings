@@ -1,0 +1,20 @@
+/* 
+  Localization.strings
+  DictionaryCard2
+
+  Created by 東大地 on 2019/12/20.
+  Copyright © 2019 dachii. All rights reserved.
+*/
+"keyWordSearch" = "Keyword search" ;
+"voiceSearch" = "Voice search"  ;
+"ThisIs" =  "This Is";
+"FlashCards" = "Flash Cards" ;
+"YouCan" = "You Can" ;
+"AddWords" = "Add Words" ;
+"YouSearched" = "You Searched" ;
+"AndDelete" = "And Delete" ;
+"ByPushing" = "By Pusshing" ;
+"TrashButton" = "TrashButton" ;
+"EnterWords" = "No words" ;
+"PleaseEnter" = "Enter words here" ;
+"ThereAreNoPages" = "No pages" ;

@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="fE9-eX-VUA">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Cards-->
+        <scene sceneID="rXm-ZO-j0w">
+            <objects>
+                <viewController id="Hm6-vL-dmT" userLabel="Cards" customClass="ResultViewController" customModule="DictionaryCard2" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Tj5-Ab-B8S">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="QGN-o1-fdj"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" tag="1" title="Cards" image="pencil.circle" catalog="system" selectedImage="pencil.circle.fill" id="4fD-c2-PQO"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aYu-BP-BEm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1141" y="1339"/>
+        </scene>
+        <!--Item 2-->
+        <scene sceneID="aA8-15-njA">
+            <objects>
+                <viewController id="Xt6-k8-FFQ" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qlO-En-vnI">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="wit-Gb-4Do"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item 2" id="GCb-aU-YtW"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ap0-EV-Ro8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3932" y="1022"/>
+        </scene>
+        <!--Item 1-->
+        <scene sceneID="YIr-WS-MSc">
+            <objects>
+                <viewController id="cFj-T1-F0f" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="tuY-sN-64X">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="k9T-bk-ZfR"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item 1" id="F1s-gM-wTU"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Cum-Ae-IKL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3932" y="374"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="ETp-qb-Tdl">
+            <objects>
+                <tabBarController id="Dhh-Y4-zc2" sceneMemberID="viewController">
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="EuK-jt-pht">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="cFj-T1-F0f" kind="relationship" relationship="viewControllers" id="D06-9a-07f"/>
+                        <segue destination="Xt6-k8-FFQ" kind="relationship" relationship="viewControllers" id="T7Y-DM-XNK"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kka-dL-85m" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2787" y="826"/>
+        </scene>
+        <!--Search-->
+        <scene sceneID="ETa-NW-R1C">
+            <objects>
+                <viewController id="W3F-VJ-Tvl" userLabel="Search" customClass="SearchViewController" customModule="DictionaryCard2" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="eBr-aH-XUt">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="3ql-et-IfJ"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Search" image="magnifyingglass" catalog="system" id="z4C-Hh-fU8"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="g5p-o9-jab" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1026" y="1022"/>
+        </scene>
+        <!--Main Tab Bar Controller-->
+        <scene sceneID="PDg-aQ-4TC">
+            <objects>
+                <tabBarController id="fE9-eX-VUA" customClass="MainTabBarController" customModule="DictionaryCard2" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="54o-4s-0mt">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="W3F-VJ-Tvl" kind="relationship" relationship="viewControllers" id="l3x-NU-e8U"/>
+                        <segue destination="Hm6-vL-dmT" kind="relationship" relationship="viewControllers" id="DBZ-aO-zz2"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="m12-YU-pis" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1468" y="-110"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="magnifyingglass" catalog="system" width="64" height="56"/>
+        <image name="pencil.circle" catalog="system" width="64" height="60"/>
+        <image name="pencil.circle.fill" catalog="system" width="64" height="60"/>
+    </resources>
+</document>
