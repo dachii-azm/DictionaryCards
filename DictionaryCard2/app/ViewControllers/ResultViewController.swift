@@ -11,14 +11,14 @@ import UIKit
 import GoogleMobileAds
 import AVFoundation
 
-class ResultViewController: UIViewController, GADBannerViewDelegate, TabBarDelegate {
+class ResultViewController: UIViewController, GADBannerViewDelegate {
     
     var selectWordList: [String] = [Key.WordList, Key.WordList2, Key.WordList3]
     var resultCardList: [ResultCardView] = []
    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = .white
+        self.view.backgroundColor = .systemGray6
         print(resultCardList.count)
         configure()
         addTextToWordList()
@@ -32,7 +32,7 @@ class ResultViewController: UIViewController, GADBannerViewDelegate, TabBarDeleg
         super.didReceiveMemoryWarning()
     }
     
-    func didSelectTab(tabBarController: MainTabBarController) {
+    override func viewWillAppear(_ animated: Bool) {
         updateViewController()
     }
     
@@ -40,7 +40,6 @@ class ResultViewController: UIViewController, GADBannerViewDelegate, TabBarDeleg
         resultCardList.removeAll()
         loadView()
         viewDidLoad()
-        
     }
     
     private func swipeGesture() {
@@ -107,6 +106,7 @@ extension ResultViewController {
         configureTopAds()
         configureBottomAds()
         configureTrashButton()
+        configureNavigationBarItem()
     }
 }
 
@@ -366,3 +366,29 @@ extension ResultViewController: CardDelegate {
     }
 }
 
+//MARK UINavigationBar
+extension ResultViewController {
+    
+    private func configureListButton() {
+        var listButton = UIBarButtonItem()
+        listButton = UIBarButtonItem(barButtonSystemItem: .bookmarks, target: self, action: #selector(self.listButtonTapped(sender: )))
+        self.navigationItem.rightBarButtonItem = listButton
+    }
+    
+    @objc private func listButtonTapped(sender: Any) {
+        let nextVC = ListViewController()
+        self.navigationController?.pushViewController(nextVC, animated: false)
+    }
+    
+    private func configureNavigationTitle() {
+        let selectCardNumber = UserDefaults.standard.object(forKey: Key.SelectCardNumber) as! Int
+        let num = selectCardNumber + 1
+        self.navigationItem.title = "Card\(num)"
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "Times New Roman", size: 20)!]
+    }
+    
+    private func configureNavigationBarItem() {
+        configureNavigationTitle()
+        configureListButton()
+    }
+}

@@ -12,7 +12,7 @@ import GoogleMobileAds
 import JOEmojiableBtn
 import ChameleonFramework
 
-class SearchViewController: UIViewController, UITextFieldDelegate, GADBannerViewDelegate, TabBarDelegate, JOEmojiableDelegate {
+class SearchViewController: UIViewController, UITextFieldDelegate, GADBannerViewDelegate,  JOEmojiableDelegate {
     
     var selectWordList: [String] = [Key.WordList, Key.WordList2, Key.WordList3]
     var selectCardImage = [PNG.card1, PNG.card2, PNG.card3]
@@ -30,7 +30,7 @@ class SearchViewController: UIViewController, UITextFieldDelegate, GADBannerView
         super.didReceiveMemoryWarning()
     }
     
-    func didSelectTab(tabBarController: MainTabBarController) {
+    override func viewWillAppear(_ animated: Bool) {
         self.searchField.text! = ""
     }
     
@@ -67,15 +67,26 @@ extension SearchViewController {
         self.view.addSubview(searchButton)
     }
     
-    private func configureAds() {
+    private func configureBottomAds() {
         var bannerView = GADBannerView()
         bannerView = GADBannerView(adSize: kGADAdSizeBanner)
-        addBannerViewToView(bannerView)
+        addBannerViewToView(bannerView, isBottom: true)
         bannerView.rootViewController = self
         bannerView.delegate = self
         // Set the ad unit ID to your own ad unit ID here.
         bannerView.adUnitID = AdmobIDs.SearchBottomID
         bannerView.load(GADRequest())
+    }
+    
+    private func configureTopAds() {
+        var topBannerView = GADBannerView()
+        topBannerView = GADBannerView(adSize: kGADAdSizeBanner)
+        addBannerViewToView(topBannerView, isBottom: false)
+        topBannerView.rootViewController = self
+        topBannerView.delegate = self
+        // Set the ad unit ID to your own ad unit ID here.
+        topBannerView.adUnitID = AdmobIDs.SearchTopID
+        topBannerView.load(GADRequest())
     }
     
     private func configureSelectCardsButton() {
@@ -117,10 +128,12 @@ extension SearchViewController {
     private func configure() {
         configureSearchField()
         configureSearchButton()
-        configureAds()
+        configureBottomAds()
+        configureTopAds()
         configureSelectCardLabel()
         configureSelectCard()
         configureSelectCardsButton()
+        configureNavigationBarItem()
     }
 }
 
@@ -215,6 +228,7 @@ extension SearchViewController {
 
 //SelectCardButton
 extension SearchViewController {
+    
     func selectedOption(_ sender: JOEmojiableBtn, index: Int) {
         
         var selectCardNumber = UserDefaults.standard.object(forKey: Key.SelectCardNumber) as! Int
@@ -245,11 +259,15 @@ extension SearchViewController {
 extension SearchViewController {
     
     //avoid safe area
-    func addBannerViewToView(_ bannerView: UIView) {
+    func addBannerViewToView(_ bannerView: UIView, isBottom: Bool) {
         bannerView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(bannerView)
         if #available(iOS 11.0, *) {
-            positionBannerAtBottomOfSafeArea(bannerView)
+            if isBottom == true {
+                positionBannerAtBottomOfSafeArea(bannerView)
+            } else {
+                positionBannerAtTopOfSafeArea(bannerView)
+            }
         }
         else {
         }
@@ -267,5 +285,42 @@ extension SearchViewController {
         )
     }
     
+    @available (iOS 11, *)
+       func positionBannerAtTopOfSafeArea(_ bannerView: UIView) {
+           // Position the banner. Stick it to the bottom of the Safe Area.
+           // Centered horizontally.
+           let guide: UILayoutGuide = view.safeAreaLayoutGuide
+           
+           NSLayoutConstraint.activate(
+               [bannerView.centerXAnchor.constraint(equalTo: guide.centerXAnchor),
+                bannerView.topAnchor.constraint(equalTo: guide.topAnchor)]
+           )
+       }
+    
+}
+
+//MARK UINavigationBar
+extension SearchViewController {
+    
+    private func configureSettingButton() {
+        var settingButton = UIBarButtonItem()
+        settingButton = UIBarButtonItem(barButtonSystemItem: .compose, target: self, action: #selector(self.settingButtonTapped(sender: )))
+        self.navigationItem.leftBarButtonItem = settingButton
+    }
+    
+    @objc private func settingButtonTapped(sender: Any) {
+        let nextVC = SettingViewController()
+        self.navigationController?.pushViewController(nextVC, animated: false)
+    }
+    
+    private func configureNavigationTitle() {
+        self.navigationItem.title = "Search"
+        self.navigationController!.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "Times New Roman", size: 20)!]
+    }
+    
+    private func configureNavigationBarItem() {
+        configureNavigationTitle()
+        configureSettingButton()
+    }
 }
 

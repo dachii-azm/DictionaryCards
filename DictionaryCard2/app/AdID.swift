@@ -18,5 +18,9 @@ struct AdmobIDs {
     
     //SearchViewController
     static let SearchBottomID = "ca-app-pub-2263975696621022/4348577464"
+    static let SearchTopID = "ca-app-pub-2263975696621022/5888248511"
+    
+    //ListViewController
+    static let ListID = "ca-app-pub-2263975696621022/9799573368"
 }
 

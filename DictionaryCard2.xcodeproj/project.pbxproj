@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		7EFF58952DD9AD76BB7CC9CA /* Pods_DictionaryCard2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEF1C4F38BB42C4A9889FAA4 /* Pods_DictionaryCard2.framework */; };
+		F15054F123F6BDC800DD4B02 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15054F023F6BDC800DD4B02 /* SettingViewController.swift */; };
+		F17429D123F9343B00BAC707 /* SearchNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17429D023F9343B00BAC707 /* SearchNavigationController.swift */; };
+		F17429D323F934F500BAC707 /* ResultNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17429D223F934F500BAC707 /* ResultNavigationController.swift */; };
 		F1B2FB3523ACD27D007A1544 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B2FB3423ACD27D007A1544 /* AppDelegate.swift */; };
 		F1B2FB3723ACD27D007A1544 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B2FB3623ACD27D007A1544 /* SceneDelegate.swift */; };
 		F1B2FB3923ACD27D007A1544 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B2FB3823ACD27D007A1544 /* SearchViewController.swift */; };
@@ -47,7 +50,10 @@
 		8C0F7F75479A83601A27B071 /* Pods-DictionaryCard2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DictionaryCard2.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DictionaryCard2/Pods-DictionaryCard2.debug.xcconfig"; sourceTree = "<group>"; };
 		DD23C778E3F22FA28DB743B1 /* Pods-DictionaryCard2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DictionaryCard2.release.xcconfig"; path = "Pods/Target Support Files/Pods-DictionaryCard2/Pods-DictionaryCard2.release.xcconfig"; sourceTree = "<group>"; };
 		DEF1C4F38BB42C4A9889FAA4 /* Pods_DictionaryCard2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DictionaryCard2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F1B2FB3123ACD27D007A1544 /* DictionaryCard2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DictionaryCard2.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F15054F023F6BDC800DD4B02 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		F17429D023F9343B00BAC707 /* SearchNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchNavigationController.swift; sourceTree = "<group>"; };
+		F17429D223F934F500BAC707 /* ResultNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultNavigationController.swift; sourceTree = "<group>"; };
+		F1B2FB3123ACD27D007A1544 /* DictionaryCards.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DictionaryCards.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1B2FB3423ACD27D007A1544 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F1B2FB3623ACD27D007A1544 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		F1B2FB3823ACD27D007A1544 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
@@ -129,7 +135,7 @@
 		F1B2FB3223ACD27D007A1544 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				F1B2FB3123ACD27D007A1544 /* DictionaryCard2.app */,
+				F1B2FB3123ACD27D007A1544 /* DictionaryCards.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -151,6 +157,9 @@
 				F1B2FB3823ACD27D007A1544 /* SearchViewController.swift */,
 				F1B2FB5123ACD479007A1544 /* ResultViewController.swift */,
 				F1EA666E23AE283900877A69 /* MainTabBarController.swift */,
+				F17429D023F9343B00BAC707 /* SearchNavigationController.swift */,
+				F17429D223F934F500BAC707 /* ResultNavigationController.swift */,
+				F15054F023F6BDC800DD4B02 /* SettingViewController.swift */,
 				F1B2FB5323ACD48F007A1544 /* ListViewController.swift */,
 			);
 			path = ViewControllers;
@@ -258,7 +267,7 @@
 			);
 			name = DictionaryCard2;
 			productName = DictionaryCard2;
-			productReference = F1B2FB3123ACD27D007A1544 /* DictionaryCard2.app */;
+			productReference = F1B2FB3123ACD27D007A1544 /* DictionaryCards.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -383,10 +392,13 @@
 				F1EA667123AE296C00877A69 /* TabBarDelegate.swift in Sources */,
 				F1B2FB5C23ACD4FC007A1544 /* SearchField.swift in Sources */,
 				F1B2FB3923ACD27D007A1544 /* SearchViewController.swift in Sources */,
+				F17429D323F934F500BAC707 /* ResultNavigationController.swift in Sources */,
+				F15054F123F6BDC800DD4B02 /* SettingViewController.swift in Sources */,
 				F1B2FB7023ACD6A7007A1544 /* Size.swift in Sources */,
 				F1B2FB3523ACD27D007A1544 /* AppDelegate.swift in Sources */,
 				F1B2FB5823ACD4CB007A1544 /* TrashButton.swift in Sources */,
 				F1B2FB3723ACD27D007A1544 /* SceneDelegate.swift in Sources */,
+				F17429D123F9343B00BAC707 /* SearchNavigationController.swift in Sources */,
 				F1B2FB5423ACD48F007A1544 /* ListViewController.swift in Sources */,
 				F1B2FB5A23ACD4E3007A1544 /* CustomCellView.swift in Sources */,
 				F1B2FB6423ACD5DA007A1544 /* CardSetting.swift in Sources */,
@@ -562,8 +574,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.daichi.DictionaryCard2;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				MARKETING_VERSION = 2.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.daichi.DictionaryCards;
+				PRODUCT_NAME = DictionaryCards;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -581,8 +594,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.daichi.DictionaryCard2;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				MARKETING_VERSION = 2.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.daichi.DictionaryCards;
+				PRODUCT_NAME = DictionaryCards;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
