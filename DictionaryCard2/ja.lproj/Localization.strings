@@ -1,10 +1,10 @@
-/* 
+/*
   Localization.strings
   DictionaryCard2
 
   Created by 東大地 on 2019/12/20.
   Copyright © 2019 dachii. All rights reserved.
-*/
+ */
 "keyWordSearch" = "キーワード検索" ;
 "voiceSearch" = "音声検索" ;
 "ThisIs" =  "これは";
@@ -18,3 +18,4 @@
 "EnterWords" = "単語を入力してください" ;
 "PleaseEnter" = "入力してください" ;
 "ThereAreNoPages" = "単語が見つかりません" ;
+"Footer" = "カードの言語を設定することでSiriの読み上げ機能を使えるようになります。";

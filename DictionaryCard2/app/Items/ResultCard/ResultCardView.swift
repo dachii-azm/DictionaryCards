@@ -81,17 +81,37 @@ class ResultCardView: CustomViewBase {
         Jplabel.frame = CGRect(x:0, y: 0, width: self.bounds.width, height: self.bounds.height)
         Jplabel.center = CGPoint(x: self.bounds.width / 2, y: self.bounds.height / 2)
         Jplabel.text = ""
+        Jplabel.textColor = .black
         Jplabel.font = UIFont.systemFont(ofSize: 50)
         Jplabel.textAlignment = NSTextAlignment.center
         self.addSubview(Jplabel)
     }
 
      @objc func siriButtonTapped(sender: Any) {
+        configureCardLanguage()
+        let index = UserDefaults.standard.object(forKey: Key.SelectCardNumber) as! Int
+        let cardLanguage: [String] = [Key.Card1Language, Key.Card2Language, Key.Card3Language]
         let utterance = AVSpeechUtterance(string:self.Jplabel.text!)
-        // 言語を日本に設定
-        utterance.voice = AVSpeechSynthesisVoice(language: "en-En")
+        // 言語を英語に設定
+        utterance.voice = AVSpeechSynthesisVoice(language:
+        (UserDefaults.standard.object(forKey: cardLanguage[index]) as! String))
         utterance.volume = 1.2
         self.talker.speak(utterance)
+    }
+    
+    //UserDefaults
+    private func configureCardLanguage() {
+        if UserDefaults.standard.object(forKey: Key.Card1Language) == nil {
+            UserDefaults.standard.set("en-En", forKey: Key.Card1Language)
+        }
+        
+        if UserDefaults.standard.object(forKey: Key.Card2Language) == nil {
+            UserDefaults.standard.set("en-En", forKey: Key.Card2Language)
+        }
+        
+        if UserDefaults.standard.object(forKey: Key.Card3Language) == nil {
+            UserDefaults.standard.set("en-En", forKey: Key.Card3Language)
+        }
     }
         
     @objc private func startDragging(_ sender: UIPanGestureRecognizer) {

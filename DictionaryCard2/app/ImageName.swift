@@ -10,12 +10,12 @@ import Foundation
 
 struct PNG {
     static let siriButton: String = "card1"
-    static let trashButton: String = "trashButton_blue"
+    static let trashButton: String = "trashBox"
     static let searchButton: String = "searchButtonGradation"
     static let card1: String = "card1"
     static let card2: String = "card2"
     static let card3: String = "card3"
-    static let siriIcon: String = "card1"
+    static let siriIcon: String = "voice"
 }
 
 struct JPG {

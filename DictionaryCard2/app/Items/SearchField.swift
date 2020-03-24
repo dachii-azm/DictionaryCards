@@ -17,9 +17,11 @@ class SearchField: UITextField {
     
     override init(frame: CGRect) {
         super.init(frame:frame)
-        
+        backgroundColor = .white
+        textColor = .black
         returnKeyType = .done
         placeholder = NSLocalizedString("PleaseEnter", comment: "")
+        
         borderStyle = .roundedRect
         clearButtonMode = .whileEditing
     }

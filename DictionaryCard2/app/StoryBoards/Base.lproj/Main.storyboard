@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16085" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="fE9-eX-VUA">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="fE9-eX-VUA">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16078.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -10,7 +10,7 @@
         <!--Cards-->
         <scene sceneID="rXm-ZO-j0w">
             <objects>
-                <viewController id="Hm6-vL-dmT" userLabel="Cards" customClass="ResultViewController" customModule="DictionaryCard2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Hm6-vL-dmT" userLabel="Cards" customClass="ResultViewController" customModule="DictionaryCards" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Tj5-Ab-B8S">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -27,7 +27,7 @@
         <!--List View Controller-->
         <scene sceneID="ANY-ql-FwI">
             <objects>
-                <viewController id="cLe-nm-qE0" userLabel="List View Controller" customClass="ListViewController" customModule="DictionaryCard2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="cLe-nm-qE0" userLabel="List View Controller" customClass="ListViewController" customModule="DictionaryCards" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="yYT-tp-X51">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -37,12 +37,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eev-pY-Hfy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2706" y="2081"/>
+            <point key="canvasLocation" x="2712" y="1218"/>
         </scene>
         <!--Search-->
         <scene sceneID="ETa-NW-R1C">
             <objects>
-                <viewController id="W3F-VJ-Tvl" userLabel="Search" customClass="SearchViewController" customModule="DictionaryCard2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="W3F-VJ-Tvl" userLabel="Search" customClass="SearchViewController" customModule="DictionaryCards" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eBr-aH-XUt">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -59,7 +59,7 @@
         <!--Setting View Controller-->
         <scene sceneID="m17-NI-9tZ">
             <objects>
-                <viewController id="Qox-46-Nce" userLabel="Setting View Controller" customClass="SettingViewController" customModule="DictionaryCard2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Qox-46-Nce" userLabel="Setting View Controller" customClass="SettingViewController" customModule="DictionaryCards" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="peD-j0-9ei">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -70,12 +70,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DP6-uq-Mmw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1724.6376811594205" y="1028.5714285714284"/>
+            <point key="canvasLocation" x="1650.7246376811595" y="1115.625"/>
         </scene>
         <!--Main Tab Bar Controller-->
         <scene sceneID="PDg-aQ-4TC">
             <objects>
-                <tabBarController id="fE9-eX-VUA" customClass="MainTabBarController" customModule="DictionaryCard2" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController id="fE9-eX-VUA" customClass="MainTabBarController" customModule="DictionaryCards" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="54o-4s-0mt">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -93,7 +93,7 @@
         <!--Search-->
         <scene sceneID="089-bM-hwP">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="tGO-jN-Gth" customClass="SearchNavigationController" customModule="DictionaryCard2" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="tGO-jN-Gth" customClass="SearchNavigationController" customModule="DictionaryCards" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Search" image="magnifyingglass" catalog="system" id="Rob-wO-wEF"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="28p-SA-dUf">
@@ -112,7 +112,7 @@
         <!--Cards-->
         <scene sceneID="KTP-5U-ild">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="del-5C-1xN" customClass="ResultNavigationController" customModule="DictionaryCard2" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="del-5C-1xN" customClass="ResultNavigationController" customModule="DictionaryCards" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" tag="1" title="Cards" image="pencil.circle" catalog="system" selectedImage="pencil.circle.fill" id="d06-2s-lCe"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="f0b-Pb-6HC">
@@ -130,8 +130,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="magnifyingglass" catalog="system" width="128" height="115"/>
-        <image name="pencil.circle" catalog="system" width="128" height="121"/>
-        <image name="pencil.circle.fill" catalog="system" width="128" height="121"/>
+        <image name="magnifyingglass" catalog="system" width="64" height="56"/>
+        <image name="pencil.circle" catalog="system" width="64" height="60"/>
+        <image name="pencil.circle.fill" catalog="system" width="64" height="60"/>
     </resources>
 </document>

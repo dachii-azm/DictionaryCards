@@ -1,12 +1,47 @@
 ---------開発まとめ-----------
 
-・UIの完成
-・カードだけ更新処理でCPU負担を減らす
+//⭕️ ・カードだけ更新処理でCPU負担を減らす
 ・設定
     通知処理
     Safari検索をありにするか
     時間管理もできたら
+    カードの名前とスピーチ言語設定
+    
+//⭕️キーワードサーチの文字制限------12
+//⭕️リスト内検索
+searchのキーワードラベル作成orポジション記述
+UI--ポジションと画像
+ダークモードに対応
+//⭕️リストは中央揃えor右揃え
     
     
+---------------
 ---------ライセンス----------
+
+//デザイン
 icon8　アプリについてなどでリンク
+
+//ライブラリ
+https://github.com/lojals/JOEmojiableBtn
+MIT license
+
+Copyright (c) 2016 Jorge Ovalle <jroz9105@gmail.com>
+Released under the MIT license
+https://github.com/lojals/JOEmojiableBtn/blob/master/LICENSE
+
+icon8
+リンクを記載
+https://icons8.jp/
+
+
+
+
+⭕️iphone11で確認
+⭕️settingのカードのフッター
+⭕️settingのNotificationTitle
+ゴミ箱
+⭕️ダークモード確認
+//change cardsの位置調整
+//twitter欄url省く
+デバイス言語で言語確認
+//キーワードサーチラベル

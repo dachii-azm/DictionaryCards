@@ -86,7 +86,7 @@ extension ResultViewController {
         let trashButton = TrashButton()
         trashButton.addTarget(self, action: #selector(self.trashButtonTapped(sender: )), for: .touchUpInside)
         trashButton.frame = CGRect(x:0, y:0, width:Size.trashButtonWidth, height:Size.trashButtonHeight)
-        trashButton.center = CGPoint(x: CGFloat.screenWidth()/2, y: CGFloat.screenHeight() * 4/5)
+        trashButton.center = CGPoint(x: CGFloat.screenWidth()/2, y: CGFloat.screenHeight() * 7/10 + 50)
         self.view.addSubview(trashButton)
     }
     
@@ -181,12 +181,6 @@ extension ResultViewController {
         }
     }
     
-   /* private func configureSiriButton(position: CGPoint) {
-        let siriButton = UIButton()
-        siriButton.frame.size = CGSize(width: 35, height: 50)
-        siriButton.setImage(UIImage(named: PNG.siriIcon), for: .normal)
-    }*/
-    
     @objc func cardTapped(sender: Any) {
         self.present(getDictionary(), animated: false, completion: nil)
     }
@@ -227,14 +221,12 @@ extension ResultViewController {
             resultCardView.delegate = self
             resultCardView.Jplabel.text = wordList[index]
             
-            if resultCardView.Jplabel.text!.isOnly(.decimalDigits, "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ' ") {
-                let siriButton = UIButton()
-                siriButton.frame.size = CGSize(width: 35, height: 50)
-                siriButton.frame.origin = CGPoint(x:resultCardView.bounds.width - siriButton.frame.size.width - 10 ,y:10 )
-                siriButton.setImage(UIImage(named: PNG.siriIcon), for: .normal)
-                siriButton.addTarget(resultCardView, action: #selector(resultCardView.siriButtonTapped(sender: )), for: .touchUpInside)
-                resultCardView.addSubview(siriButton)
-            }
+            let siriButton = UIButton()
+            siriButton.frame.size = CGSize(width: 50, height: 50)
+            siriButton.frame.origin = CGPoint(x:resultCardView.bounds.width - siriButton.frame.size.width - 10 ,y:10 )
+            siriButton.setImage(UIImage(named: PNG.siriIcon), for: .normal)
+            siriButton.addTarget(resultCardView, action: #selector(resultCardView.siriButtonTapped(sender: )), for: .touchUpInside)
+            resultCardView.addSubview(siriButton)
             
             let tap = UITapGestureRecognizer(target: self, action: #selector(self.cardTapped(sender: )))
             resultCardView.addGestureRecognizer(tap)

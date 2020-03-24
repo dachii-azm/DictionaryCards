@@ -39,6 +39,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 userDefault.set(false, forKey: "firstLaunch")
                 UserDefaults.standard.set(WordList, forKey: Key.WordList)
                 UserDefaults.standard.set(selectCardNumber, forKey: Key.SelectCardNumber)
+                for i in 0...1 {
+                    UserDefaults.standard.set("en-En", forKey: "card\(i+1)Language")
+                    UserDefaults.standard.set("card\(i+1)", forKey: "card\(i+1)Title")
+                }
                 //let wordList: [String] = UserDefaults.standard.array(forKey: Data.WordList) as! [String]
                 print("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa")
                 print("初回起動の時だけ呼ばれるよ")

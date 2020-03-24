@@ -1,0 +1,39 @@
+
+/* Class = "UITableViewSection"; footerTitle = "You can Notification "; ObjectID = "7DE-ZJ-Wln"; */
+"7DE-ZJ-Wln.footerTitle" = "You can Notification ";
+
+/* Class = "UITableViewSection"; headerTitle = "Notification"; ObjectID = "7DE-ZJ-Wln"; */
+"7DE-ZJ-Wln.headerTitle" = "Notification";
+
+/* Class = "UILabel"; text = "Notification"; ObjectID = "Eyr-Nl-jkf"; */
+"Eyr-Nl-jkf.text" = "Notification";
+
+/* Class = "UILabel"; text = "Card2"; ObjectID = "MJ9-qE-z1i"; */
+"MJ9-qE-z1i.text" = "Card2";
+
+/* Class = "UITabBarItem"; title = "Search"; ObjectID = "Rob-wO-wEF"; */
+"Rob-wO-wEF.title" = "Search";
+
+/* Class = "UITableViewSection"; headerTitle = "About this App"; ObjectID = "Vtb-Lo-VHM"; */
+"Vtb-Lo-VHM.headerTitle" = "About this App";
+
+/* Class = "UILabel"; text = "License"; ObjectID = "bak-PV-0UL"; */
+"bak-PV-0UL.text" = "License";
+
+/* Class = "UITabBarItem"; title = "Cards"; ObjectID = "d06-2s-lCe"; */
+"d06-2s-lCe.title" = "Cards";
+
+/* Class = "UITableViewSection"; headerTitle = "Cards"; ObjectID = "j4b-9m-IbA"; */
+"j4b-9m-IbA.headerTitle" = "Cards";
+
+/* Class = "UILabel"; text = "Tutorial"; ObjectID = "oA1-IU-m3a"; */
+"oA1-IU-m3a.text" = "Tutorial";
+
+/* Class = "UILabel"; text = "Card1"; ObjectID = "pG3-eA-9OB"; */
+"pG3-eA-9OB.text" = "Card1";
+
+/* Class = "UILabel"; text = "Card3"; ObjectID = "wTD-FZ-gvt"; */
+"wTD-FZ-gvt.text" = "Card3";
+
+/* Class = "UILabel"; text = "Contacts"; ObjectID = "y1L-KO-Yw3"; */
+"y1L-KO-Yw3.text" = "Contacts";

@@ -18,6 +18,13 @@ struct Key {
     static let WordList = "wordList"
     static let WordList2 = "wordList2"
     static let WordList3 = "wordList3"
+    
+    //CardSetting
+    static let Card1Language = "card1Language"
+    static let Card2Language = "card2Language"
+    static let Card3Language = "card3Language"
+    static let LanguageIndex = "languageIndex"
 }
+
 
 

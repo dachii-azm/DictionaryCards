@@ -18,12 +18,14 @@ class SearchViewController: UIViewController, UITextFieldDelegate, GADBannerView
     var selectCardImage = [PNG.card1, PNG.card2, PNG.card3]
     var searchField = SearchField()
     var selectCardButton = JOEmojiableBtn(frame: CGRect(origin: CGPoint(x: 40, y: CGFloat.screenHeight()*7/10), size: CGSize(width: 70, height: 70)))
+    var textMaxLength: Int = 12
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = .systemGray6
         configure()
         swipeGesture()
+      
     }
     
     override func didReceiveMemoryWarning() {
@@ -57,6 +59,7 @@ extension SearchViewController {
         self.searchField.center = CGPoint(x: CGFloat.screenWidth()/2, y: CGFloat.screenHeight()/3)
         self.view.addSubview(self.searchField)
     }
+    
     
     //Configure SearchLabel
     private func configureSearchButton() {
@@ -105,7 +108,7 @@ extension SearchViewController {
         selectCardButton.setImage(UIImage(named:selectCardImage[index]), for: .normal)
         //selectCardButton.titleLabel?.font = UIFont.systemFont(ofSize: 20)
         selectCardButton.layer.cornerRadius = 20
-        selectCardButton.layer.borderColor = UIColor.black.cgColor
+        selectCardButton.layer.borderColor = UIColor.label.cgColor
         selectCardButton.layer.borderWidth = 3
         selectCardButton.contentMode = UIView.ContentMode.scaleAspectFit
         selectCardButton.contentHorizontalAlignment = .fill
@@ -117,11 +120,37 @@ extension SearchViewController {
         let selectCardLabel = UILabel()
         selectCardLabel.text = "Change Cards"
         selectCardLabel.font = UIFont.systemFont(ofSize: 15)
-        selectCardLabel.textColor = .black
-        selectCardLabel.frame = CGRect(x: 40, y: CGFloat.screenHeight()*7/10 - 20, width: 100, height: 50)
+       // selectCardLabel.textColor = .placeholderText
+        selectCardLabel.frame = CGRect(x: 0, y: 0, width: selectCardButton.frame.width * 1.5, height: 30)
+        selectCardLabel.center = CGPoint(x: selectCardButton.center.x, y: selectCardButton.frame.minY - selectCardLabel.frame.height/2)
         selectCardLabel.sizeToFit()
         selectCardLabel.textAlignment = .center
         self.view.addSubview(selectCardLabel)
+    }
+    
+    private func ConfigureKeySearchLabel() {
+        let keySearchLabel = UILabel()
+        keySearchLabel.text = "Keyword search"
+        keySearchLabel.frame = CGRect(x: 0, y: 0, width: self.searchField.frame.width*1.5, height: searchField.frame.height * 3/2)
+        keySearchLabel.center = CGPoint(x: self.view.bounds.width/2, y: self.searchField.frame.minY - keySearchLabel.frame.height/2)
+        keySearchLabel.textAlignment = .center
+        keySearchLabel.font = UIFont.systemFont(ofSize: 30)
+        self.view.addSubview(keySearchLabel)
+    }
+    
+    //UserDefaults
+    private func configureCardLanguage() {
+        if UserDefaults.standard.object(forKey: Key.Card1Language) == nil {
+            UserDefaults.standard.set("en-En", forKey: Key.Card1Language)
+        }
+        
+        if UserDefaults.standard.object(forKey: Key.Card2Language) == nil {
+            UserDefaults.standard.set("en-En", forKey: Key.Card2Language)
+        }
+        
+        if UserDefaults.standard.object(forKey: Key.Card3Language) == nil {
+            UserDefaults.standard.set("en-En", forKey: Key.Card3Language)
+        }
     }
     
     //Configure all of Items
@@ -134,6 +163,8 @@ extension SearchViewController {
         configureSelectCard()
         configureSelectCardsButton()
         configureNavigationBarItem()
+        configureCardLanguage()
+        ConfigureKeySearchLabel()
     }
 }
 
@@ -224,6 +255,16 @@ extension SearchViewController {
     func textFieldDidEndEditing(_ textField: UITextField) {
         UserDefaults.standard.set(textField.text!, forKey: Key.GetText)
     }
+    
+    //load
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        // 入力を反映させたテキストを取得する
+        let resultText: String = (textField.text! as NSString).replacingCharacters(in: range, with: string)
+        if resultText.count <= self.textMaxLength {
+            return true
+        }
+        return false
+    }
 }
 
 //SelectCardButton
@@ -253,6 +294,8 @@ extension SearchViewController {
             UserDefaults.standard.set(selectCardNumber, forKey: Key.SelectCardNumber)
         }
     }
+    
+    
 }
 
 //MARK ADs position
@@ -303,8 +346,14 @@ extension SearchViewController {
 extension SearchViewController {
     
     private func configureSettingButton() {
-        var settingButton = UIBarButtonItem()
-        settingButton = UIBarButtonItem(barButtonSystemItem: .compose, target: self, action: #selector(self.settingButtonTapped(sender: )))
+        let settingButton = UIBarButtonItem()
+        //settingButton = UIBarButtonItem(barButtonSystemItem: .compose, target: self, action: #selector(self.settingButtonTapped(sender: )))
+        settingButton.image = UIImage(named: "gear")?.withRenderingMode(UIImage.RenderingMode.alwaysOriginal)
+        settingButton.customView?.widthAnchor.constraint(equalToConstant: 24.0).isActive = true
+        settingButton.customView?.heightAnchor.constraint(equalToConstant: 24.0).isActive = true
+        settingButton.style = .plain
+        settingButton.target = self
+        settingButton.action = #selector(self.settingButtonTapped(sender: ))
         self.navigationItem.leftBarButtonItem = settingButton
     }
     
